@@ -1,0 +1,72 @@
+{
+  "trait": <str, trait name>,
+  "data": {
+    "gene": <str, path to genotype file (.npy) without head and id>,
+    "pheno": <str, path to genotype file with head, only 2 cols(id,trait)>,
+    "plink": <str, path to plink file>,
+    "anno": <str, path to classification informationno>
+  },
+  "seed": <int, seed>,
+  "GBLUP":{
+    "hiblup": <str, path to HIBLUP>,
+    "threads": <int, number of threads>
+  },
+  "SnpSelect": {
+    "xgbround": <int, num_boost_round>,
+    "early_stopping": <int, early_stopping_rounds>,
+    "max_depth": <int, max_depth>,
+    "eta": <float, learning rate>,
+    "subsample": <float, subsample>,
+    "lambda": <int, L2 regularization (0-9)>,
+  },
+  "model":{
+    "SVR": {
+      "kernel": <str, the type of kernel function>,
+    },
+    "RandomForest": <bool>,
+    "XGBoost": {
+      "xgbround": <int, num_boost_round>,
+      "early_stopping": <int, early_stopping_rounds>,
+      "max_depth": <int, max_depth>,
+      "eta": <float, learning rate>,
+      "lm": <int, L2 regularization (0-9)>,
+    },
+    "LightGBM": {
+      "round": <int, num_boost_round>,
+      "early_stopping_round": <int, early_stopping_rounds>,
+      "learning_rate": <float, learning rate>,
+      "lambda_l2": <float, L2 regularization>,
+    },
+    "MLP": {
+      "lr": <float, learning rate>,
+      "batch_size": <int, batch size>,
+      "epochs": <int, epochs of train>,
+      "early_stopping": <int, early stopping epoch>,
+      "loss": <str, loss function, 'mse' or 'mae'>,
+      "optimizer": <str, optimizer, 'adam' or 'sgd'>
+      "weight_decay": <float, weight decay (SGD)>,
+      "layers": <int, number of the hidden layer(s)>,
+      "dropout": <float, dropout probability>,
+    },
+    "CNN": {
+      "lr": <float, learning rate>,
+      "batch_size": <int, batch size>,
+      "epochs": <int, epochs of train>,
+      "early_stopping": <int, early stopping epoch>,
+      "loss": <str, loss function, 'mse' or 'mae'>,
+      "optimizer": <int, optimizer, 'adam' or 'sgd'>
+      "weight_decay": <float, weight decay (SGD)>,
+      "dropout": <float, dropout probability>,
+    },
+    "SwimTransformer": {
+      "lr": <float, learning rate>,
+      "batch_size": <int, batch size>,
+      "epochs": <int, epochs of train>,
+      "early_stopping": <int, early stopping epoch>,
+      "loss": <str, loss function, 'mse' or 'mae'>,
+      "optimizer": <int, optimizer, 'adam' or 'sgd'>
+      "weight_decay": <float, weight decay (SGD)>,
+      "window_size": <int, window size>,
+    }
+  }
+}

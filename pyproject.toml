@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=65", "wheel>=0.38.4"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mars"
+version = "0.1.0"
+description = "MARS is a framework for genomic prediction, integrating two-step strategy and hierarchical feature selection and multi model prediction"
+authors = [{name = "Ma Jingnan", email = "majingnan1116@163.com"}]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "scikit-learn>=1.5.2",
+    "xgboost>=2.1.2",
+    "lightgbm>=4.5.0",
+    "torch>=2.0.1",
+    "attrs>=19.3.0",
+    "matplotlib>=3.9.2"
+]
