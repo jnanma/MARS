@@ -17,13 +17,21 @@ class GBLUPConfig:
 
 
 @attr.s
+class parameterConfig:
+    xgbround = attr.ib(type=int, default=None)
+    early_stopping = attr.ib(type=int, default=None)
+    max_depth = attr.ib(type=int, default=None)
+    eta = attr.ib(type=float, default=None)
+    subsample = attr.ib(type=float, default=None)
+    lm = attr.ib(type=int, default=None)
+    alpha = attr.ib(type=float, default=None)
+    l1_ratio = attr.ib(type=float, default=None)
+
+
+@attr.s
 class SnpSelectConfig:
-    xgbround = attr.ib(type=int)
-    early_stopping = attr.ib(type=int)
-    max_depth = attr.ib(type=int)
-    eta = attr.ib(type=float)
-    subsample = attr.ib(type=float)
-    lm = attr.ib(type=int)
+    model = attr.ib(type=str)
+    parameter = attr.ib(type=parameterConfig)
 
 
 @attr.s

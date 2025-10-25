@@ -12,18 +12,23 @@
     "threads": <int, number of threads>
   },
   "SnpSelect": {
-    "xgbround": <int, num_boost_round>,
-    "early_stopping": <int, early_stopping_rounds>,
-    "max_depth": <int, max_depth>,
-    "eta": <float, learning rate>,
-    "subsample": <float, subsample>,
-    "lambda": <int, L2 regularization (0-9)>,
+    "model": <str, 'XGBoost' or 'ElasticNet'>,
+    "parameter": {
+      "xgbround": <int, num_boost_round ('XGBoost')>,
+      "early_stopping": <int, early_stopping_rounds ('XGBoost')>,
+      "max_depth": <int, max_depth ('XGBoost')>,
+      "eta": <float, learning rate ('XGBoost')>,
+      "subsample": <float, subsample ('XGBoost')>,
+      "lambda": <int, L2 regularization (0-9) ('XGBoost')>
+      "alpha": <float, L1 regularization ('ElasticNet')>, 
+      "l1_ratio": <float, L1 and L2 regularization ('ElasticNet')>
+    }
   },
   "model":{
     "SVR": {
       "kernel": <str, the type of kernel function>,
     },
-    "RandomForest": <bool>,
+    "RF": <bool>,
     "XGBoost": {
       "xgbround": <int, num_boost_round>,
       "early_stopping": <int, early_stopping_rounds>,

@@ -16,6 +16,11 @@ MARS integrates the two-step strategy and hierarchical feature selection.
  MARS offers a modular and user-friendly workflow for GP.
  It is easy to set parameters, and to configure the model, and to train and test.
 
+## Installation
+MARS can be installed by using the following code:
+```sh
+pip install git+https://github.com/jnanma/MARS.git
+``` 
 
 ## Getting started guide
 
@@ -26,7 +31,9 @@ To help you get started, we provide a ```config_template.json``` config file whe
   
 To train and predict, run 
 
-```python MARS/main.py --json_path MARS (the path of config file named 'config.json')```  
+```sh
+python MARS/main.py --json_path MARS
+```  
 The ```json_path``` specifies the directory containing the configuration file, not the file itself. The configuration file must be named ```config.json```.  
   
   

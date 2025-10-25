@@ -1,5 +1,4 @@
 import sys
-sys.path.append('/home/share/hzau/home/majn/code')
 import mars
 
 import os
