@@ -36,7 +36,7 @@ python main.py --json_path config
 ```  
 The ```json_path``` specifies the directory containing the configuration file, not the file itself. The configuration file must be named ```config.json```.  
 
-Ex: use demo run MARS:
+Ex: use demo to run MARS:
 ```sh
 python ./MARS/mars/main.py --json_path ./MARS/mars/demo
 ```  
