@@ -19,7 +19,8 @@ MARS integrates the two-step strategy and hierarchical feature selection.
 ## Installation
 MARS can be installed by using the following code:
 ```sh
-pip install git+https://github.com/jnanma/MARS.git
+git clone https://github.com/jnanma/MARS.git
+pip install ./MARS
 ``` 
 
 ## Getting started guide
@@ -30,11 +31,15 @@ To help you get started, we provide a ```config_template.json``` config file whe
   
   
 To train and predict, run 
-
 ```sh
-python MARS/main.py --json_path MARS
+python main.py --json_path config
 ```  
 The ```json_path``` specifies the directory containing the configuration file, not the file itself. The configuration file must be named ```config.json```.  
+
+Ex: use demo run MARS:
+```sh
+python ./MARS/mars/main.py --json_path ./MARS/mars/demo
+```  
   
   
 A ```main.py``` code file includes 5 modules:   
