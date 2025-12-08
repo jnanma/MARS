@@ -1,0 +1,78 @@
+{
+  "trait": <str, trait name>,
+  "data": {
+    "gene": <str, path to genotype file (.npy) without head and id>,
+    "pheno": <str, path to genotype file with head, only 2 cols(id,trait)>,
+    "plink": <str, path to plink file>,
+    "anno": <str, path to classification informationno>
+  },
+  "seed": <int, seed>,
+  "GBLUP":{
+    "hiblup": <str, path to HIBLUP>,
+    "threads": <int, number of threads>,
+    "top": <float, Percentage of top SNPs>
+  },
+  "SnpSelect": {
+    "model": <str, 'XGBoost' or 'ElasticNet'>,
+    "parameter": {
+      "xgbround": <int, num_boost_round ('XGBoost')>,
+      "early_stopping": <int, early_stopping_rounds ('XGBoost')>,
+      "max_depth": <int, max_depth ('XGBoost')>,
+      "eta": <float, learning rate ('XGBoost')>,
+      "subsample": <float, subsample ('XGBoost')>,
+      "lambda": <int, L2 regularization (0-9) ('XGBoost')>
+      "alpha": <float, L1 regularization ('ElasticNet')>, 
+      "l1_ratio": <float, L1 and L2 regularization ('ElasticNet')>
+    }
+  },
+  "model":{
+    "SVR": {
+      "kernel": <str, the type of kernel function>,
+    },
+    "RF": <bool>,
+    "XGBoost": {
+      "xgbround": <int, num_boost_round>,
+      "early_stopping": <int, early_stopping_rounds>,
+      "max_depth": <int, max_depth>,
+      "eta": <float, learning rate>,
+      "lm": <int, L2 regularization (0-9)>,
+    },
+    "LightGBM": {
+      "round": <int, num_boost_round>,
+      "early_stopping_round": <int, early_stopping_rounds>,
+      "learning_rate": <float, learning rate>,
+      "lambda_l2": <float, L2 regularization>,
+    },
+    "MLP": {
+      "lr": <float, learning rate>,
+      "batch_size": <int, batch size>,
+      "epochs": <int, epochs of train>,
+      "early_stopping": <int, early stopping epoch>,
+      "loss": <str, loss function, 'mse' or 'mae'>,
+      "optimizer": <str, optimizer, 'adam' or 'sgd'>
+      "weight_decay": <float, weight decay (SGD)>,
+      "layers": <int, number of the hidden layer(s)>,
+      "dropout": <float, dropout probability>,
+    },
+    "CNN": {
+      "lr": <float, learning rate>,
+      "batch_size": <int, batch size>,
+      "epochs": <int, epochs of train>,
+      "early_stopping": <int, early stopping epoch>,
+      "loss": <str, loss function, 'mse' or 'mae'>,
+      "optimizer": <int, optimizer, 'adam' or 'sgd'>
+      "weight_decay": <float, weight decay (SGD)>,
+      "dropout": <float, dropout probability>,
+    },
+    "SwimTransformer": {
+      "lr": <float, learning rate>,
+      "batch_size": <int, batch size>,
+      "epochs": <int, epochs of train>,
+      "early_stopping": <int, early stopping epoch>,
+      "loss": <str, loss function, 'mse' or 'mae'>,
+      "optimizer": <int, optimizer, 'adam' or 'sgd'>
+      "weight_decay": <float, weight decay (SGD)>,
+      "window_size": <int, window size>,
+    }
+  }
+}

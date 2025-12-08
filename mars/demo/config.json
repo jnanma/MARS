@@ -1,0 +1,77 @@
+{
+  "trait": "T1",
+  "data": {
+    "gene": "/mars/demo.npy",
+    "pheno": "/mars/demo.phe",
+    "plink": "/mars/demo",
+    "anno": "/mars/Categeory.snplist"
+  },
+  "seed": 0,
+  "GBLUP":{
+    "hiblup": "/hiblup",
+    "threads": 16,
+    "top": 0.02
+  },
+  "SnpSelect": {
+    "model": "XGBoost",
+    "parameter": {
+      "xgbround": 1000,
+      "early_stopping": 25,
+      "max_depth": 4,
+      "eta": 5e-3,
+      "subsample":0.8,
+      "lm":5
+    }
+  },
+  "model":{
+    "RF": {
+    },
+    "SVR": {
+      "kernel": "rbf"
+    },
+    "XGBoost": {
+      "xgbround": 500,
+      "early_stopping": 20,
+      "max_depth": 4,
+      "eta": 5e-3,
+      "lm": 5
+    },
+    "LightGBM": {
+      "round": 500,
+      "early_stopping": 20,
+      "learning_rate": 5e-3,
+      "lambda_l2": 1e-3
+    },
+    "MLP": {
+      "lr": 1e-3,
+      "batch_size": 256,
+      "epochs": 5000,
+      "early_stopping": 1000,
+      "loss": "mse",
+      "optimizer": "adam",
+      "weight_decay": 1e-2,
+      "layers": 2,
+      "dropout": 0.5
+    },
+    "CNN": {
+      "lr": 1e-3,
+      "batch_size": 256,
+      "epochs": 5000,
+      "early_stopping": 1000,
+      "loss": "mse",
+      "optimizer": "adam",
+      "weight_decay": 1e-2,
+      "dropout": 0.5
+    },
+    "SwimTransformer": {
+      "lr": 1e-3,
+      "batch_size": 32,
+      "epochs": 2000,
+      "early_stopping": 500,
+      "loss": "mse",
+      "optimizer": "adam",
+      "weight_decay": 1e-2,
+      "window_size": 16
+    }
+  }
+}
