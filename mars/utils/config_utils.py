@@ -113,8 +113,8 @@ class Config:
     seed = attr.ib(type=int)
     ModelSetting = attr.ib(type=str)
     GBLUP = attr.ib(type=GBLUPConfig)
-    SnpSelect = attr.ib(type=SnpSelectConfig)
-    model = attr.ib(type=ModelConfig)
+    SnpSelect = attr.ib(type=SnpSelectConfig, default=None)
+    model = attr.ib(type=ModelConfig, default=None)
 
     @classmethod
     def from_json(cls, config_path):
