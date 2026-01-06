@@ -129,6 +129,11 @@ class Config:
         config["seed"] = config["seed"]
         config["ModelSetting"] = config["ModelSetting"]
         config["GBLUP"] = GBLUPConfig(**config["GBLUP"])
-        config["SnpSelect"] = SnpSelectConfig(**config["SnpSelect"])
-        config["model"] = ModelConfig(**config["model"])
+        try:
+            config["SnpSelect"] = SnpSelectConfig(**config["SnpSelect"])
+            config["model"] = ModelConfig(**config["model"])
+        except KeyError:
+            config["SnpSelect"] = None
+            config["model"] = None
+        
         return cls(**config)
