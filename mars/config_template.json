@@ -7,6 +7,7 @@
     "anno": <str, path to classification informationno>
   },
   "seed": <int, seed>,
+  "ModelSetting": <str, "GBLUP" (only GBLUP) or "MARS" (GBLUP + DL)>,
   "GBLUP":{
     "hiblup": <str, path to HIBLUP>,
     "threads": <int, number of threads>,

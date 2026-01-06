@@ -141,3 +141,21 @@ def cor_mse(gebv_train, gebv_val, path):
     }
     result_df = pd.DataFrame([result])
     result_df.to_csv(os.path.join(path, 'gblup.csv'), sep="\t", index=False, header=True, quoting=False)
+
+
+def HiblupO(config, path):
+    command = [
+        config.GBLUP.hiblup,
+        "--single-trait",
+        "--threads", str(config.GBLUP.threads),
+        "--pheno", config.data.pheno,
+        "--pheno-pos", "2",
+        "--bfile", config.data.plink, 
+        "--out", os.path.join(path, 'GBLUP')
+    ]
+
+    try:
+        subprocess.run(command, check=True, text=True, capture_output=True)
+    except subprocess.CalledProcessError as e:
+        print("命令执行失败，错误码:", e.returncode)
+        print("错误输出:", e.stderr)

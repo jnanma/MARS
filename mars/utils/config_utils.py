@@ -111,6 +111,7 @@ class Config:
     trait = attr.ib(type=str)
     data = attr.ib(type=DataConfig)
     seed = attr.ib(type=int)
+    ModelSetting = attr.ib(type=str)
     GBLUP = attr.ib(type=GBLUPConfig)
     SnpSelect = attr.ib(type=SnpSelectConfig)
     model = attr.ib(type=ModelConfig)
@@ -126,6 +127,7 @@ class Config:
         config["trait"] = config["trait"]
         config["data"] = DataConfig(**config["data"])
         config["seed"] = config["seed"]
+        config["ModelSetting"] = config["ModelSetting"]
         config["GBLUP"] = GBLUPConfig(**config["GBLUP"])
         config["SnpSelect"] = SnpSelectConfig(**config["SnpSelect"])
         config["model"] = ModelConfig(**config["model"])
