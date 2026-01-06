@@ -14,7 +14,7 @@ class DataConfig:
 class GBLUPConfig:
     hiblup = attr.ib(type=str)
     threads = attr.ib(type=float)
-    top = attr.ib(type=float)
+    top = attr.ib(type=float, default=None)
 
 
 @attr.s
@@ -31,68 +31,68 @@ class parameterConfig:
 
 @attr.s
 class SnpSelectConfig:
-    model = attr.ib(type=str)
-    parameter = attr.ib(type=parameterConfig)
+    model = attr.ib(type=str, default=None)
+    parameter = attr.ib(type=parameterConfig, default=None)
 
 
 @attr.s
 class svrConfig:
-    kernel = attr.ib(type=str)
+    kernel = attr.ib(type=str, default=None)
 
 
 @attr.s
 class xgbConfig:
-    xgbround = attr.ib(type=int)
-    early_stopping = attr.ib(type=int)
-    max_depth = attr.ib(type=int)
-    eta = attr.ib(type=float)
-    lm = attr.ib(type=int)
+    xgbround = attr.ib(type=int, default=None)
+    early_stopping = attr.ib(type=int, default=None)
+    max_depth = attr.ib(type=int, default=None)
+    eta = attr.ib(type=float, default=None)
+    lm = attr.ib(type=int, default=None)
 
 
 @attr.s
 class lgbConfig:
-    round = attr.ib(type=int)
-    early_stopping_round = attr.ib(type=int)
-    max_depth = attr.ib(type=int)
-    learning_rate = attr.ib(type=float)
-    lambda_l2 = attr.ib(type=float)
+    round = attr.ib(type=int, default=None)
+    early_stopping_round = attr.ib(type=int, default=None)
+    max_depth = attr.ib(type=int, default=None)
+    learning_rate = attr.ib(type=float, default=None)
+    lambda_l2 = attr.ib(type=float, default=None)
 
 
 @attr.s
 class mlpConfig:
-    lr = attr.ib(type=float)
-    batch_size = attr.ib(type=int)
-    epochs = attr.ib(type=int)
-    early_stopping = attr.ib(type=int)
-    loss = attr.ib(type=str)
-    optimizer = attr.ib(type=str)
-    weight_decay = attr.ib(type=float)
-    layers = attr.ib(type=float)
-    dropout = attr.ib(type=float)
+    lr = attr.ib(type=float, default=None)
+    batch_size = attr.ib(type=int, default=None)
+    epochs = attr.ib(type=int, default=None)
+    early_stopping = attr.ib(type=int, default=None)
+    loss = attr.ib(type=str, default=None)
+    optimizer = attr.ib(type=str, default=None)
+    weight_decay = attr.ib(type=float, default=None)
+    layers = attr.ib(type=float, default=None)
+    dropout = attr.ib(type=float, default=None)
 
 
 @attr.s
 class cnnConfig:
-    lr = attr.ib(type=float)
-    batch_size = attr.ib(type=int)
-    epochs = attr.ib(type=int)
-    early_stopping = attr.ib(type=int)
-    loss = attr.ib(type=str)
-    optimizer = attr.ib(type=str)
-    weight_decay = attr.ib(type=float)
-    dropout = attr.ib(type=float)
+    lr = attr.ib(type=float, default=None)
+    batch_size = attr.ib(type=int, default=None)
+    epochs = attr.ib(type=int, default=None)
+    early_stopping = attr.ib(type=int, default=None)
+    loss = attr.ib(type=str, default=None)
+    optimizer = attr.ib(type=str, default=None)
+    weight_decay = attr.ib(type=float, default=None)
+    dropout = attr.ib(type=float, default=None)
     
 
 @attr.s
 class swtfConfig:
-    lr = attr.ib(type=float)
-    batch_size = attr.ib(type=int)
-    epochs = attr.ib(type=int)
-    early_stopping = attr.ib(type=int)
-    loss = attr.ib(type=str)
-    optimizer = attr.ib(type=str)
-    weight_decay = attr.ib(type=float)
-    window_size = attr.ib(type=int)
+    lr = attr.ib(type=float, default=None)
+    batch_size = attr.ib(type=int, default=None)
+    epochs = attr.ib(type=int, default=None)
+    early_stopping = attr.ib(type=int, default=None)
+    loss = attr.ib(type=str, default=None)
+    optimizer = attr.ib(type=str, default=None)
+    weight_decay = attr.ib(type=float, default=None)
+    window_size = attr.ib(type=int, default=None)
 
 
 @attr.s
