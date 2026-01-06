@@ -42,7 +42,8 @@ def Hiblup(labels, y_train, y_val, y_test, config, path):
     snpeff = pd.read_table(os.path.join(path, f"{trait}.snpeff"), sep='\t')
     snpeff['abs_eff'] = snpeff.iloc[:, -1].abs()
     snpeff_sorted = snpeff.sort_values('abs_eff', ascending=False)
-    top_n = math.ceil(len(snpeff_sorted) * config.GBLUP.top)
+    num_top = 0.05 if config.GBLUP.top is None else config.GBLUP.top
+    top_n = math.ceil(len(snpeff_sorted) * num_top)
     top_snplist = snpeff_sorted.iloc[:top_n, 0]
     top_snplist.to_csv(os.path.join(path, f"{trait}.snplist"), index=False, header=False)
 
