@@ -80,13 +80,15 @@ def Hiblup(labels, y_train, y_val, y_test, config, path):
         print("错误输出:", e.stderr)
 
     # 运行Hiblup脚本
+    ext_xrm = os.path.join(path, f"{trait}.ext.GA")
+    exc_xrm = os.path.join(path, f"{trait}.exc.GA")
     command = [
         config.GBLUP.hiblup,
         "--single-trait",
         "--threads", str(config.GBLUP.threads),
         "--pheno", labels_new_path,
         "--pheno-pos", "2",
-        "--xrm", f"{os.path.join(path, f"{trait}.ext.GA")},{os.path.join(path, f"{trait}.exc.GA")}",
+        "--xrm", f"{ext_xrm}, {exc_xrm}",
         "--out", os.path.join(path, trait)
     ]
 
