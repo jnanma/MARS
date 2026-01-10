@@ -88,7 +88,7 @@ def Hiblup(labels, y_train, y_val, y_test, config, path):
         "--threads", str(config.GBLUP.threads),
         "--pheno", labels_new_path,
         "--pheno-pos", "2",
-        "--xrm", f"{ext_xrm}, {exc_xrm}",
+        "--xrm", f"{ext_xrm},{exc_xrm}",
         "--out", os.path.join(path, trait)
     ]
 
